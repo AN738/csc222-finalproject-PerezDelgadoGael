@@ -23,6 +23,7 @@ public class Machine {
         System.out.println(this);
     }
 
+    //Calculate rental cost
     public double calculateRentalCost(int days) {
         return dailyRate * days;
     }
@@ -46,6 +47,7 @@ public class Machine {
     public double getHoursUsed() { return hoursUsed; }
     public void setHoursUsed(double hoursUsed) { this.hoursUsed = hoursUsed; }
 
+    //Override
     @Override
     public String toString() {
         return "Machine {" +
@@ -57,4 +59,4 @@ public class Machine {
                 ", hoursUsed=" + hoursUsed +
                 '}';
     }
-}
+} //ends our Machine class
