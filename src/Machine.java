@@ -5,7 +5,7 @@ public class Machine {
     private String brand;
     private String model;
     private int year;
-    ptivate double dailyRate;
+    private double dailyRate;
     private double hoursUsed;
 
     //Constructor
