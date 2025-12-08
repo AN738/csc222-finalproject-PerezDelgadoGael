@@ -43,7 +43,7 @@ public class Main {
     } //ends showMenu
 
     private static void addMachine() {
-        System.out.println("Add Excavator or Forklift?");
+        System.out.println("Add (1) Excavator or (2) Forklift?");
         int type = Integer.parseInt(scanner.nextLine());
 
         System.out.print("Enter ID: ");
@@ -82,5 +82,51 @@ public class Main {
         }
     }
 
+
+    //First version for List Machines
+    private static void listMachines() {
+        if (inventory.isEmpty()) {
+            System.out.println("No machines in inventory.\n");
+            return;
+        }
+
+        System.out.println("----- MACHINE INVENTORY -----");
+        for (Machine m : inventory) {
+            System.out.println(m);
+        }
+        System.out.println();
+    }
+
+
+    private static void searchMachine() {
+        System.out.print("Enter ID to search: ");
+        String id = scanner.nextLine();
+
+        for (Machine m : inventory) {
+            if (m.getId().equalsIgnoreCase(id)) {
+                System.out.println("Machine found:");
+                System.out.println(m + "\n");
+                return;
+            }
+        }
+
+        System.out.println("No machine found with ID: " + id + "\n");
+    }
+
+    private static void calculateRentalCost() {
+        System.out.print("Enter machine ID: ");
+        String id = scanner.nextLine();
+
+        for (Machine m : inventory) {
+            if (m.getId().equalsIgnoreCase(id)) {
+                System.out.print("Enter number of days: ");
+                int days = Integer.parseInt(scanner.nextLine());
+                System.out.println("Rental cost = $" + m.calculateRentalCost(days) + "\n");
+                return;
+            }
+        }
+
+        System.out.println("Machine not found.\n");
+    }
 
 } // ends main class
