@@ -1,22 +1,45 @@
+import java.util.ArrayList;
+import java.util.ArrayList;
+
 public class Main {
+
+    private static ArrayList<Machine> inventory = new ArrayList<>();
+    private static Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
 
-        // Create sample Excavator
-        Excavator excavator = new Excavator(
-                "EX001", "Caterpillar", "320D", 2018,
-                350.0, 4200.5, 1.2, 21000
-        );
+        boolean running = true;
 
-        // Create sample Forklift
-        Forklift forklift = new Forklift(
-                "FL001", "Toyota", "8FGCU25", 2020,
-                180.0, 1500.0, 2500.0, 12.5
-        );
+        while (running) {
+            showMenu();
+            int choice = Integer.parseInt(scanner.nextLine());
 
-        // Print the objects
-        System.out.println(excavator);
-        System.out.println(forklift);
+            switch (chice) {
+                case 1 -> addMachine();
+                case 2 -> listMachines();
+                case 3 -> searchMachine();
+                case 4 -> calculateRentalCost();
+                case 5 -> {
+                    System.out.println("Existing program...");
+                    running = false;
+                }
+                default -> System.out.println("Invalid choice. Try again.");
+            }
+        }
     }
+
+    private static void showMenu() {
+        System.out.println("========================================");
+        System.out.println("     MALPHAEGIS RENTAL MANAGER v1.0");
+        System.out.println("========================================");
+        System.out.println("1. Add New Machine");
+        System.out.println("2. List All Machines");
+        System.out.println("3. Search Machine by ID");
+        System.out.println("4. Calculate Rental Cost");
+        System.out.println("5. Exit Program");
+        System.out.println("========================================");
+        System.out.print("Choose an option: ");
+    }
+
 
 } // ends main class
