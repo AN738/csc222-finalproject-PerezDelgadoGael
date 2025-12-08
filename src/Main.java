@@ -1,5 +1,5 @@
 import java.util.ArrayList;
-import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Main {
 
@@ -14,13 +14,13 @@ public class Main {
             showMenu();
             int choice = Integer.parseInt(scanner.nextLine());
 
-            switch (chice) {
+            switch (choice) {
                 case 1 -> addMachine();
                 case 2 -> listMachines();
                 case 3 -> searchMachine();
                 case 4 -> calculateRentalCost();
                 case 5 -> {
-                    System.out.println("Existing program...");
+                    System.out.println("Exiting program...");
                     running = false;
                 }
                 default -> System.out.println("Invalid choice. Try again.");
@@ -28,6 +28,7 @@ public class Main {
         }
     }
 
+    //Interactive Menu
     private static void showMenu() {
         System.out.println("========================================");
         System.out.println("     MALPHAEGIS RENTAL MANAGER v1.0");
@@ -39,6 +40,46 @@ public class Main {
         System.out.println("5. Exit Program");
         System.out.println("========================================");
         System.out.print("Choose an option: ");
+    } //ends showMenu
+
+    private static void addMachine() {
+        System.out.println("Add Excavator or Forklift?");
+        int type = Integer.parseInt(scanner.nextLine());
+
+        System.out.print("Enter ID: ");
+        String id = scanner.nextLine();
+        System.out.print("Enter Brand: ");
+        String brand = scanner.nextLine();
+        System.out.print("Enter Model: ");
+        String model = scanner.nextLine();
+        System.out.print("Enter Year: ");
+        int year = Integer.parseInt(scanner.nextLine());
+        System.out.print("Enter Daily Rate: ");
+        double rate = Double.parseDouble(scanner.nextLine());
+        System.out.print("Enter Hours Used: ");
+        double hours = Double.parseDouble(scanner.nextLine());
+
+        if (type == 1) { // Excavator
+            System.out.print("Enter Bucket Capacity: ");
+            double bucket = Double.parseDouble(scanner.nextLine());
+            System.out.print("Enter Operating Weight: ");
+            double weight = Double.parseDouble(scanner.nextLine());
+
+            inventory.add(new Excavator(id, brand, model, year, rate, hours, bucket, weight));
+            System.out.println("Excavator added!\n");
+
+        } else if (type == 2) { // Forklift
+            System.out.print("Enter Lift Capacity: ");
+            double lift = Double.parseDouble(scanner.nextLine());
+            System.out.print("Enter Max Height: ");
+            double height = Double.parseDouble(scanner.nextLine());
+
+            inventory.add(new Forklift(id, brand, model, year, rate, hours, lift, height));
+            System.out.println("Forklift added!\n");
+
+        } else {
+            System.out.println("Invalid machine type.\n");
+        }
     }
 
 
