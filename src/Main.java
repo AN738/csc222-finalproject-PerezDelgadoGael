@@ -10,6 +10,7 @@ public class Main {
 
         boolean running = true;
 
+        //Main menu Loop
         while (running) {
             showMenu();
             int choice = Integer.parseInt(scanner.nextLine());
@@ -25,9 +26,11 @@ public class Main {
                     running = false;
                 }
                 default -> System.out.println("Invalid choice. Try again.");
-            }
-        }
-    }
+            }//ends switch
+
+
+        } //ends while loop
+    } //ends Main Method
 
     //Interactive Menu
     private static void showMenu() {
@@ -82,7 +85,7 @@ public class Main {
         } else {
             System.out.println("Invalid machine type.\n");
         }
-    }
+    } //ends addMachine method
 
 
     //First version for List Machines
@@ -97,7 +100,7 @@ public class Main {
             System.out.println(m);
         }
         System.out.println();
-    }
+    } //ends listMachines method
 
 
     private static void searchMachine() {
