@@ -19,7 +19,8 @@ public class Main {
                 case 2 -> listMachines();
                 case 3 -> searchMachine();
                 case 4 -> calculateRentalCost();
-                case 5 -> {
+                // case 5
+                case 6 -> {
                     System.out.println("Exiting program...");
                     running = false;
                 }
@@ -37,7 +38,8 @@ public class Main {
         System.out.println("2. List All Machines");
         System.out.println("3. Search Machine by ID");
         System.out.println("4. Calculate Rental Cost");
-        System.out.println("5. Exit Program");
+        System.out.println("5. Export Inventory to CSV");
+        System.out.println("6. Exit Program");
         System.out.println("========================================");
         System.out.print("Choose an option: ");
     } //ends showMenu
