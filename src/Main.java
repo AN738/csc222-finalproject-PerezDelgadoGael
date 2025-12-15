@@ -19,7 +19,7 @@ public class Main {
                 case 2 -> listMachines();
                 case 3 -> searchMachine();
                 case 4 -> calculateRentalCost();
-                // case 5
+                case 5 -> CSVExporter.exportToCSV(inventory, "machines.csv");
                 case 6 -> {
                     System.out.println("Exiting program...");
                     running = false;
