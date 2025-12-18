@@ -1,0 +1,4 @@
+id,brand,model,year,dailyrate,hoursused,type,extra1,extra2
+3412432,Komatsu,PC18MR-3,2017,1200.0,24.0,Excavator,12345.0,3213.0
+Hitachi,Hitachi,ZX210LC-6,2019,123.0,8.0,Excavator,4342.0,313.0
+4341212,Grove,GMK4080-1,2024,212.0,14.0,Forklift,231.0,213.0
